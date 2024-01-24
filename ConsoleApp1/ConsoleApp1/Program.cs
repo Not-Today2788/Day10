@@ -10,32 +10,26 @@ namespace ConsoleApp1
     {
         static void Main(string[] args)
         {
-            //int[] num = { 1, 2, 3, 4, 5, 4, 4, 5, 3, 7, 5, 6, 4, 3, 3, 0, 6, 6, 5, 8, 9, 4, 6, 8 };
-            //int[] numcheck = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 0 };
-            //int one=0, two=0, three = 0, four = 0, five = 0, six = 0,x seven = 0, eight = 0, nine = 0,zero=0;
 
-                Console.WriteLine("Input: ");
-                string userinput = Console.ReadLine();
+            int[] array = { 1, 2, 3, 4, 2, 3, 5, 6, 7, 1, 8, 9, 5 };
 
-                char[] arr2 = userinput.ToCharArray();
+            Console.WriteLine("\nUnique elements in the array: ");
 
-                Console.WriteLine("Character Array: ");
+            //I am using HashSet to track unique elements
+            HashSet<int> uniqueElements = new HashSet<int>();
 
-                foreach (char c in arr2)
-                {
-                    Console.Write(c + " ");
-                }
+            foreach (int num in array)
+            {
+                //Add the element to the HashSet
+                //HashSet will automatically discard duplicates
+                uniqueElements.Add(num);
+            }
 
-                Array.Reverse(arr2);
-
-                Console.WriteLine("\nReversed Array: ");
-
-                foreach (char c in arr2)
-                { Console.Write(c + " "); }
-
-                Console.ReadLine();
-            
-            Console.ReadLine();
+            //Print 
+            foreach (int uniqueElement in uniqueElements)
+            {
+                Console.Write(uniqueElement + " ");
+            }
         }
     }
 }
