@@ -11,25 +11,15 @@ namespace ConsoleApp1
         static void Main(string[] args)
         {
 
-            int[] array = { 1, 2, 3, 4, 2, 3, 5, 6, 7, 1, 8, 9, 5 };
-
-            Console.WriteLine("\nUnique elements in the array: ");
-
-            //I am using HashSet to track unique elements
-            HashSet<int> uniqueElements = new HashSet<int>();
-
-            foreach (int num in array)
+            int n = 134, last_digit, sum = 0;
+            while (n > 0)
             {
-                //Add the element to the HashSet
-                //HashSet will automatically discard duplicates
-                uniqueElements.Add(num);
+                last_digit = n % 10;
+                n = n / 10;
+                sum = sum + last_digit;
             }
-
-            //Print 
-            foreach (int uniqueElement in uniqueElements)
-            {
-                Console.Write(uniqueElement + " ");
-            }
+            Console.WriteLine(sum);
+            Console.ReadLine();
         }
     }
 }
