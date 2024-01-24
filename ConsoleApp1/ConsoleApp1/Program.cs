@@ -4,36 +4,25 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-class Program
+namespace Question_9
 {
-    static void Main()
+    internal class Program
     {
-        //Input string
-        string inputString = "Hello World, this is a sample";
-
-        //Call the ReverseWords method and display the result
-        string reversedString = ReverseWords(inputString);
-        Console.WriteLine("Original String: " + inputString);
-        Console.WriteLine("Reversed String: " + reversedString);
-        Console.ReadLine();
-    }
-
-    static string ReverseWords(string input)
-    {
-        //Split
-        string[] words = input.Split(' ');
-
-        //Reverse each word
-        for (int i = 0; i < words.Length; i++)
+        static void Main(string[] args)
         {
-            char[] charArray = words[i].ToCharArray();
-            Array.Reverse(charArray);
-            words[i] = new string(charArray);
-        }
+            int[,] arr = { { 1, 2, 3 }, { 4, 5, 6 }, { 7, 8, 9, } };
 
-        //Join the reversed words back into a string
-        string reversedString = string.Join(" ", words);
-        return reversedString;
+            int sum = 0;
+            for (int i = 0; i < arr.GetLength(0); i++)
+            {
+                for (int j = 0; j < arr.GetLength(1); j++)
+                {
+                    sum += arr[i, j];
+                }
+                Console.WriteLine($"Sum of {i + 1}th row is {sum}");
+                sum = 0;
+            }
+            Console.ReadLine();
+        }
     }
 }
-
