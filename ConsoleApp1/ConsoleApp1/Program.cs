@@ -4,27 +4,21 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Question_6
+namespace Question_5
 {
     internal class Program
     {
         static void Main(string[] args)
         {
             int n = 6;
-            for (int i = 0; i < n; i++)
+            for (int i = n; i > 0; i--)
             {
-                if (i == 0 || i == n - 1)
+                for (int j = i; j > 0; j--)
                 {
-                    for (int j = 0; j < n; j++)
-                    {
-                        Console.Write("* ");
-                    }
-                }
-                else
-                {
-                    Console.Write("*         *");
+                    Console.Write($" *");
                 }
                 Console.WriteLine();
+                n--;
             }
             Console.ReadLine();
         }
