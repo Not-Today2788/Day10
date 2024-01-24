@@ -4,22 +4,28 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Question_5
+namespace Question_4
 {
     internal class Program
     {
         static void Main(string[] args)
         {
-            int n = 6;
-            for (int i = n; i > 0; i--)
+            int[] arr = { 1, 2, 3, 4, 5, 89, 23, };
+            int max = int.MinValue;
+            int min = int.MaxValue;
+            for (int i = 0; i < arr.Length; i++)
             {
-                for (int j = i; j > 0; j--)
+                if (arr[i] > max)
                 {
-                    Console.Write($" *");
+                    max = arr[i];
                 }
-                Console.WriteLine();
-                n--;
+                if (arr[i] < min)
+                {
+                    min = arr[i];
+                }
             }
+            Console.WriteLine($"MAX is {max}");
+            Console.WriteLine($"MIN is {min}");
             Console.ReadLine();
         }
     }
