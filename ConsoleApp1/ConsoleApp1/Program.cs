@@ -4,29 +4,29 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Question_4
+namespace Question_3
 {
     internal class Program
     {
         static void Main(string[] args)
         {
-            int[] arr = { 1, 2, 3, 4, 5, 89, 23, };
-            int max = int.MinValue;
-            int min = int.MaxValue;
+            int[] arr = { 1, 2, 3, 3, 4, 2, 1, 5, 8 };
+            int count;
+
             for (int i = 0; i < arr.Length; i++)
             {
-                if (arr[i] > max)
+                count = 0;
+                for (int j = 0; j < arr.Length; j++)
                 {
-                    max = arr[i];
+                    if (arr[i] == arr[j])
+                    {
+                        count++;
+                    }
                 }
-                if (arr[i] < min)
-                {
-                    min = arr[i];
-                }
+                Console.WriteLine($"{arr[i]} is {count} times;");
             }
-            Console.WriteLine($"MAX is {max}");
-            Console.WriteLine($"MIN is {min}");
             Console.ReadLine();
+
         }
     }
 }
