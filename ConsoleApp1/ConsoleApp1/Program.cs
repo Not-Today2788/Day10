@@ -4,22 +4,36 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ConsoleApp1
+class Program
 {
-    internal class Program
+    static void Main()
     {
-        static void Main(string[] args)
-        {
+        //Input string
+        string inputString = "Hello World, this is a sample";
 
-            int n = 134, last_digit, sum = 0;
-            while (n > 0)
-            {
-                last_digit = n % 10;
-                n = n / 10;
-                sum = sum + last_digit;
-            }
-            Console.WriteLine(sum);
-            Console.ReadLine();
+        //Call the ReverseWords method and display the result
+        string reversedString = ReverseWords(inputString);
+        Console.WriteLine("Original String: " + inputString);
+        Console.WriteLine("Reversed String: " + reversedString);
+        Console.ReadLine();
+    }
+
+    static string ReverseWords(string input)
+    {
+        //Split
+        string[] words = input.Split(' ');
+
+        //Reverse each word
+        for (int i = 0; i < words.Length; i++)
+        {
+            char[] charArray = words[i].ToCharArray();
+            Array.Reverse(charArray);
+            words[i] = new string(charArray);
         }
+
+        //Join the reversed words back into a string
+        string reversedString = string.Join(" ", words);
+        return reversedString;
     }
 }
+
