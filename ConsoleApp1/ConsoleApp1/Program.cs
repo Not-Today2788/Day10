@@ -4,23 +4,27 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Question_9
+namespace Question_6
 {
     internal class Program
     {
         static void Main(string[] args)
         {
-            int[,] arr = { { 1, 2, 3 }, { 4, 5, 6 }, { 7, 8, 9, } };
-
-            int sum = 0;
-            for (int i = 0; i < arr.GetLength(0); i++)
+            int n = 6;
+            for (int i = 0; i < n; i++)
             {
-                for (int j = 0; j < arr.GetLength(1); j++)
+                if (i == 0 || i == n - 1)
                 {
-                    sum += arr[i, j];
+                    for (int j = 0; j < n; j++)
+                    {
+                        Console.Write("* ");
+                    }
                 }
-                Console.WriteLine($"Sum of {i + 1}th row is {sum}");
-                sum = 0;
+                else
+                {
+                    Console.Write("*         *");
+                }
+                Console.WriteLine();
             }
             Console.ReadLine();
         }
